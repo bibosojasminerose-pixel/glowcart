@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6b3158">
+<meta name="description" content="Discover affordable makeup, skincare, personal-care products, and beauty accessories at GLOWCART.">
+<title>GLOWCART | Beauty Finds</title>
+
+<style>
+:root {
+  --ink: #34232f;
+  --muted: #766674;
+  --paper: #fff9fc;
+  --surface: #ffffff;
+  --pink: #e95e9c;
+  --plum: #6b3158;
+  --line: #f0dce8;
+  --soft: #fff0f7;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a { -webkit-tap-highlight-color: transparent; }
+
+button { font-family: inherit; }
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.announcement {
+  background: var(--plum);
+  color: white;
+  text-align: center;
+  padding: 11px 14px;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .15em;
+  font-size: 24px;
+  color: var(--pink);
+}
+
+.brand span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .15em;
+  margin-top: 4px;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.navlinks a:hover { color: var(--pink); }
+
+.pill {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: var(--pink);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.pill:hover {
+  background: var(--plum);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.secondary:hover {
+  color: white;
+  border-color: var(--plum);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 40px;
+  align-items: center;
+  padding: 45px 0 65px;
+}
+
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin: 16px 0;
+}
+
+.hero h1 em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+.hero p {
+  max-width: 490px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.hero-art {
+  min-height: 380px;
+  border-radius: 48% 48% 22px 22px;
+  background: radial-gradient(
+    circle at 50% 40%,
+    #ffe5f1 0,
+    #f5b8d6 36%,
+    #b75b8d 72%,
+    #6b3158 100%
+  );
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.hero-art::before,
+.hero-art::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff80;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+}
+
+.hero-art::after {
+  width: 340px;
+  height: 340px;
+}
+
+.hero-art .hero-icons {
+  font-size: 75px;
+  z-index: 1;
+}
+
+.hero-art strong,
+.hero-art p {
+  z-index: 1;
+  color: white;
+}
+
+.hero-art strong {
+  letter-spacing: .14em;
+  font-size: 18px;
+}
+
+.hero-art p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.shop { padding: 42px 0 70px; }
+
+.section-head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: clamp(27px, 4vw, 40px);
+  margin: 10px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 25px 0 30px;
+}
+
+.filter {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.filter:hover,
+.filter.active {
+  background: var(--plum);
+  color: white;
+  border-color: var(--plum);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+  min-width: 0;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #6b315815;
+}
+
+.product[hidden] { display: none; }
+
+.product-visual {
+  height: 205px;
+  position: relative;
+  overflow: hidden;
+  background: var(--soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-visual::before {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: #f7d7e8;
+}
+
+.product-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+}
+
+.product-visual .product-emoji {
+  position: relative;
+  z-index: 1;
+  display: none;
+  font-size: 68px;
+  filter: drop-shadow(0 10px 8px #0002);
+}
+
+.tag {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  background: white;
+  color: var(--pink);
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 9px;
+  font-weight: 800;
+  z-index: 2;
+}
+
+.product-info { padding: 15px; }
+
+.category {
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.product h3 {
+  font-size: 15px;
+  line-height: 1.45;
+  min-height: 42px;
+  margin: 9px 0;
+}
+
+.product p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  min-height: 57px;
+  margin: 0 0 14px;
+}
+
+.price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--pink);
+}
+
+.shop-now {
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.note {
+  margin: 24px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.promise {
+  background: var(--soft);
+  padding: 45px 0;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.promise-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.promise-card .icon { font-size: 30px; }
+
+.promise-card h3 {
+  font-size: 15px;
+  margin: 12px 0 7px;
+}
+
+.promise-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cta {
+  padding: 65px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 12px 0;
+}
+
+.cta p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 13px;
+}
+
+.cta .actions { justify-content: center; }
+
+.footer {
+  background: var(--plum);
+  color: white;
+  padding: 27px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer small {
+  color: #f4dce9;
+  line-height: 1.8;
+}
+
+.toast {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--plum);
+  color: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px #0003;
+  z-index: 99;
+  display: none;
+  width: max-content;
+  max-width: 90%;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.toast.show { display: block; }
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 30px;
+  }
+
+  .hero-art { min-height: 320px; }
+
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .navlinks { gap: 12px; }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navlinks {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navlinks a { font-size: 12px; }
+
+  .brand { font-size: 21px; }
+
+  .products { gap: 10px; }
+
+  .product-visual { height: 155px; }
+
+  .product-visual .product-emoji { font-size: 53px; }
+
+  .product-info { padding: 11px; }
+
+  .product h3 { font-size: 13px; }
+
+  .product p { font-size: 11px; }
+
+  .price { font-size: 18px; }
+
+  .shop-now { font-size: 11px; padding: 10px 5px; }
+
+  .hero-art { min-height: 270px; }
+
+  .promise-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  YOUR LITTLE BEAUTY FINDS, ALL IN ONE PLACE ✦
+</div>
+
+<header class="wrap nav">
+  <a class="brand" href="#home">
+    GLOWCART
+    <span>BEAUTY • CARE • EVERYDAY GLOW</span>
+  </a>
+
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="#shop">Shop Finds</a>
+    <a href="#about">Why GlowCart</a>
+    <a href="#contact" class="pill">Shop with us</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="wrap hero" id="home">
+  <div>
+    <div class="eyebrow">Your glow, your way</div>
+
+    <h1>Little finds.<br><em>Big glow.</em></h1>
+
+    <p>
+      Discover your beauty favorites at GLOWCART!
+      From makeup and skincare to personal-care essentials
+      and beauty accessories, find lovely products at
+      budget-friendly prices.
+    </p>
+
+    <div class="actions">
+      <a class="pill" href="#shop">Explore the Collection ↗</a>
+      <a class="pill secondary" href="#about">Meet GLOWCART</a>
+    </div>
+  </div>
+
+  <div class="hero-art" aria-label="GLOWCART beauty collection illustration">
+    <div class="hero-icons">💄 🧴 ✨</div>
+    <strong>GLOWCART BEAUTY</strong>
+    <p>Your everyday glow starts here.</p>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+<div class="wrap">
+
+  <div class="section-head">
+    <div class="eyebrow">The GLOWCART Edit</div>
+    <h2>Find Your Next Favorite</h2>
+    <p>Beauty essentials and cute everyday finds, picked with your budget in mind.</p>
+  </div>
+
+  <div class="filters" aria-label="Filter products">
+    <button type="button" class="filter active" data-filter="all">All Products</button>
+    <button type="button" class="filter" data-filter="makeup">Makeup</button>
+    <button type="button" class="filter" data-filter="skincare">Skin Care</button>
+    <button type="button" class="filter" data-filter="care">Personal Care</button>
+    <button type="button" class="filter" data-filter="accessories">Accessories</button>
+  </div>
+
+  <div class="products" id="products">
+
+    <!-- MAKEUP 1 -->
+    <article class="product" data-category="makeup">
+      <div class="product-visual">
+        <span class="tag">MAKEUP</span>
+        <img src="images/jmcy-setting-spray.jpg" alt="JMCY Setting Spray"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🧴</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Makeup</div>
+        <h3>JMCY Setting Spray</h3>
+        <p>A finishing step for your everyday makeup routine.</p>
+        <div class="price-row">
+          <span class="price">₱160</span>
+          <button type="button" class="pill shop-now"
+                  data-name="JMCY Setting Spray" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- MAKEUP 2 -->
+    <article class="product" data-category="makeup">
+      <div class="product-visual">
+        <span class="tag">MAKEUP</span>
+        <img src="images/maange-concealer.jpg" alt="Maange Full Coverage Concealer"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">💄</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Makeup</div>
+        <h3>Maange Full Coverage Concealer</h3>
+        <p>A complexion makeup essential for your beauty routine.</p>
+        <div class="price-row">
+          <span class="price">₱150</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Maange Full Coverage Concealer" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- MAKEUP 3 -->
+    <article class="product" data-category="makeup">
+      <div class="product-visual">
+        <span class="tag">MAKEUP</span>
+        <img src="images/skintific-matte-cushion.jpg" alt="Skintific Matte Cushion"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🪞</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Makeup</div>
+        <h3>Skintific Matte Cushion</h3>
+        <p>A cushion foundation pick for your makeup collection.</p>
+        <div class="price-row">
+          <span class="price">₱280</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Skintific Matte Cushion" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- MAKEUP 4 -->
+    <article class="product" data-category="makeup">
+      <div class="product-visual">
+        <span class="tag">BUNDLE</span>
+        <img src="images/ten-twenty-bundle.jpg" alt="Ten Twenty Bundle"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🎀</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Makeup</div>
+        <h3>Ten Twenty Bundle</h3>
+        <p>A beauty bundle for your everyday makeup collection.</p>
+        <div class="price-row">
+          <span class="price">₱250</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Ten Twenty Bundle" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SKIN CARE 1 -->
+    <article class="product" data-category="skincare">
+      <div class="product-visual">
+        <span class="tag">SKIN CARE</span>
+        <img src="images/hikari-rejuvenating-set.jpg" alt="Hikari Rejuvenating Set"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🧴</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Skin Care</div>
+        <h3>Hikari Rejuvenating Set</h3>
+        <p>A skincare set for your beauty-care collection.</p>
+        <div class="price-row">
+          <span class="price">₱230</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Hikari Rejuvenating Set" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SKIN CARE 2 -->
+    <article class="product" data-category="skincare">
+      <div class="product-visual">
+        <span class="tag">SKIN CARE</span>
+        <img src="images/ten-twenty-deep-cleaning.jpg" alt="Ten Twenty Deep Cleaning"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🫧</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Skin Care</div>
+        <h3>Ten Twenty Deep Cleaning</h3>
+        <p>A cleansing product for your skincare routine.</p>
+        <div class="price-row">
+          <span class="price">₱50</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Ten Twenty Deep Cleaning" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SKIN CARE 3 -->
+    <article class="product" data-category="skincare">
+      <div class="product-visual">
+        <span class="tag">SKIN CARE</span>
+        <img src="images/nature-glow-gummies.jpg" alt="Nature Glow Glutathione Collagen Gummies"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🍬</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Skin Care</div>
+        <h3>Nature Glow Glutathione Collagen Gummies</h3>
+        <p>Beauty gummies. Follow the product label and directions.</p>
+        <div class="price-row">
+          <span class="price">₱290</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Nature Glow Glutathione Collagen Gummies" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SKIN CARE 4 -->
+    <article class="product" data-category="skincare">
+      <div class="product-visual">
+        <span class="tag">SKIN CARE</span>
+        <img src="images/beauty-vault-maintenance.jpg" alt="Beauty Vault Maintenance"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">✨</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Skin Care</div>
+        <h3>Beauty Vault Maintenance</h3>
+        <p>A maintenance product for your beauty-care collection.</p>
+        <div class="price-row">
+          <span class="price">₱250</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Beauty Vault Maintenance" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- PERSONAL CARE 1 -->
+    <article class="product" data-category="care">
+      <div class="product-visual">
+        <span class="tag">PERSONAL CARE</span>
+        <img src="images/prestige-niacinamide-whitening.jpg" alt="Prestige Niacinamide Whitening"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🧴</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Personal Care</div>
+        <h3>Prestige Niacinamide Whitening</h3>
+        <p>Personal-care product for your daily routine.</p>
+        <div class="price-row">
+          <span class="price">₱50 each</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Prestige Niacinamide Whitening" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- PERSONAL CARE 2 -->
+    <article class="product" data-category="care">
+      <div class="product-visual">
+        <span class="tag">PERSONAL CARE</span>
+        <img src="images/arbutin-500ml.jpg" alt="Arbutin 500 ml"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🧴</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Personal Care</div>
+        <h3>Arbutin 500 ml</h3>
+        <p>A personal-care essential for your collection.</p>
+        <div class="price-row">
+          <span class="price">₱130</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Arbutin 500 ml" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ACCESSORIES 1 -->
+    <article class="product" data-category="accessories">
+      <div class="product-visual">
+        <span class="tag">ACCESSORY</span>
+        <img src="images/13-piece-makeup-brush.jpg" alt="13-Piece Makeup Brush Set"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🖌️</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Accessories</div>
+        <h3>13-Piece Makeup Brush Set</h3>
+        <p>A brush set for applying and blending makeup.</p>
+        <div class="price-row">
+          <span class="price">₱150</span>
+          <button type="button" class="pill shop-now"
+                  data-name="13-Piece Makeup Brush Set" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ACCESSORIES 2 -->
+    <article class="product" data-category="accessories">
+      <div class="product-visual">
+        <span class="tag">ACCESSORY</span>
+        <img src="images/makeup-sponges.jpg" alt="Makeup Sponges"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="product-emoji">🩷</span>
+      </div>
+      <div class="product-info">
+        <div class="category">Accessories</div>
+        <h3>Makeup Sponges</h3>
+        <p>Beauty sponges for blending your makeup.</p>
+        <div class="price-row">
+          <span class="price">₱100</span>
+          <button type="button" class="pill shop-now"
+                  data-name="Makeup Sponges" data-url="">Shop on TikTok</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="note">
+    Prices are displayed as provided by GLOWCART. Please confirm
+    availability and current prices before ordering.
+  </p>
+
+</div>
+</section>
+
+<section class="promise" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The GLOWCART Promise</div>
+      <h2>Good Finds. Feel-Good Prices.</h2>
+      <p>A little more joy in your everyday beauty shopping.</p>
+    </div>
+
+    <div class="promise-grid">
+      <div class="promise-card">
+        <div class="icon">♡</div>
+        <h3>Budget-Friendly Picks</h3>
+        <p>Explore beauty products at approachable price points.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="icon">✦</div>
+        <h3>Beauty Essentials</h3>
+        <p>Discover makeup, skincare, personal care, and accessories.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="icon">🛍️</div>
+        <h3>Easy Online Shopping</h3>
+        <p>Use each product's TikTok Shop button once its link is added.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Come Find Your Glow</div>
+    <h2>Your Next Favorite Is Waiting.</h2>
+    <p>
+      Browse our beauty collection and tap a product's Shop on TikTok
+      button to open its listing. Product links will be added soon.
+    </p>
+
+    <div class="actions">
+      <button type="button" class="pill" id="copyContact">
+        Copy Shop Inquiry Message
+      </button>
+      <a class="pill secondary" href="#shop">Browse Products ↑</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong style="letter-spacing:.15em">GLOWCART</strong><br>
+      <small>Beauty and personal-care finds</small>
+    </div>
+    <small>Made with love for your everyday glow ✦</small>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const toast = document.getElementById("toast");
+let toastTimer;
+
+function notify(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3200);
+}
+
+// PRODUCT CATEGORY FILTERS
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(filter => {
+      filter.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const category = button.dataset.filter;
+
+    document.querySelectorAll(".product").forEach(product => {
+      const matches =
+        category === "all" ||
+        product.dataset.category === category;
+
+      product.hidden = !matches;
+    });
+  });
+});
+
+// TIKTOK SHOP PRODUCT BUTTONS
+document.querySelectorAll(".shop-now").forEach(button => {
+  button.addEventListener("click", () => {
+    const url = button.dataset.url.trim();
+    const productName = button.dataset.name;
+
+    if (!url) {
+      notify(productName + ": TikTok Shop link coming soon!");
+      return;
+    }
+
+    // Only allow secure web links.
+    try {
+      const parsedUrl = new URL(url);
+
+      if (parsedUrl.protocol !== "https:") {
+        notify("Please add a valid HTTPS product link.");
+        return;
+      }
+
+      window.open(parsedUrl.href, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      notify("Please check the TikTok Shop product link.");
+    }
+  });
+});
+
+// COPY A GENERAL SHOP INQUIRY
+async function copyMessage(message) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(message);
+      notify("Message copied! Paste it into your chat.");
+      return;
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = message;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    const copied = document.execCommand("copy");
+    textarea.remove();
+
+    if (copied) {
+      notify("Message copied! Paste it into your chat.");
+    } else {
+      notify(message);
+    }
+  } catch (error) {
+    notify(message);
+  }
+}
+
+document.getElementById("copyContact").addEventListener("click", () => {
+  copyMessage(
+    "Hi GLOWCART! Please send me your current product list, " +
+    "availability, and TikTok Shop links. Thank you!"
+  );
+});
+</script>
+
+</body>
+</html>
